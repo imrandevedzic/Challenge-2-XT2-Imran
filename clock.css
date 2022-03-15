@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+*{
+	margin-top: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	background-color: black;
+	background-repeat: no-repeat;
+  	background-size: cover;
+  	background-attachment: fixed;
+  	background-position: center center;
+
+}
+
+.grid-container{
+	display: grid;
+	grid-template-columns: auto auto auto;
+	grid-gap: 20px;
+	align-items: center;
+	position: relative;
+	overflow: auto;
+
+}
+
+
+.intro{
+	grid-column-start: 1;
+ 	grid-column-end: 4;
+ 	color: white;
+ 	font-family: 'Space Mono';
+ 	text-align: center;
+ 	padding-top: 20px;
+}
+
+.intro h1 {
+	font-size: 13px;
+}
+
+.intro h2{
+	font-size: 12px;
+}
+
+
+
+.digitalclock{
+	grid-column-start: 1;
+ 	grid-column-end: 4;
+	color: white;
+	text-align: center;
+	font-family: 'VT323';
+}
+
+.digitalclock img{
+	max-width: 300px;
+	height: 190px;
+}
+
+.digitalclock #digitalclock {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: white;
+    font-size: 13px;
+  	font-weight: bold;
+    letter-spacing: 13px;
+}
+
+.middag, .avond, .nacht, .ochtend{
+	grid-column-start: 1;
+ 	grid-column-end: 4;
+	color: white;
+	text-align: center;
+	margin: auto;
+	font-family: 'Space Mono';
+	width: 150px;
+	height: 150px;
+	background: linear-gradient(0deg,#ff0030,#808072,#00ffb4);
+	border-radius: 50%;
+	position: relative;
+	margin-top: -15%;
+}
+
+.avond{
+	background: linear-gradient(0deg,#f4f118,#f9c01e,#fd8f24);
+}
+
+.nacht{
+	background: gray;
+	border: 1px solid white;
+}
+
+.ochtend{
+	background: linear-gradient(0deg,#5fd96e,#dbf92c,#ebfd24);
+}
+
+.middag .hand, .avond .hand, .nacht .hand, .ochtend .hand{
+	--rotation:0;
+	position: absolute;
+	bottom: 50%;
+	left: 50%;
+	width: 5px;
+	height: 40%;
+	background-color: white;
+	transform-origin: bottom;
+	z-index: 10;
+	transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+
+.middag::after, .avond::after, .nacht::after, .ochtend::after{
+	content: '';
+	position: absolute;
+	background-color: white;
+	z-index: 11;
+	width: 7px;
+	height: 7px;
+	top:50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+}
+
+.middag .hand.second, .avond .hand.second, .nacht .hand.second, .ochtend .hand.second{
+	width: 1px;
+	height: 45%;
+	background-color: #7E0042;
+}
+
+.middag .hand.minute, .avond .hand.minute, .nacht .hand.minute, .ochtend .hand.minute {
+	width: 3px;
+	height: 40%;
+	background-color: white;
+}
+
+.middag .hand.hour, .avond .hand.hour, .nacht .hand.hour, .ochtend .hand.hour{
+	width: 3px;
+	height: 30%;
+	background-color: white;
+}
+
+.date p{
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 12px;
+	font-weight: bold;
+	letter-spacing: 3px;
+	padding-top: 10px;
+}
+
+@media only screen and (min-width: 768px){
+
+
+.intro{
+ 	padding-top: 35px;
+}
+
+.intro h1 {
+	font-size: 14px;
+}
+
+.intro h2{
+	font-size: 13px;
+}
+
+
+
+.digitalclock img{
+	max-width: 450px;
+	height: 290px;
+}
+
+.digitalclock #digitalclock {
+    top: 38%;
+    font-size: 15px;
+    letter-spacing: 15px;
+}
+
+.middag, .avond, .nacht, .ochtend{
+	width: 170px;
+	height: 170px;
+	margin-top: -12%;
+}
+
+.date p{
+	font-size: 13px;
+	letter-spacing: 4px;
+	padding-top: 5%;
+}
+
+@media screen and (min-width: 1280px){
+
+
+
+
+.intro{
+	grid-column-start: 1;
+ 	grid-column-end: 2;
+ 	grid-row-start: 2;
+ 	grid-row-end: 3;
+ 	color: white;
+ 	padding-top: 0px;
+}
+
+.digitalclock{
+	grid-column-start: 1;
+ 	grid-column-end: 4;
+ 	grid-row-start: 1;
+ 	grid-row-end: 2;
+	
+}
+
+.digitalclock img{
+	width: 700px;
+	height: 300px;
+}
+
+.digitalclock #digitalclock {
+    top: 28%;
+    letter-spacing: 15px;
+}
+
+.middag, .avond, .nacht, .ochtend{
+	grid-column-start: 2;
+ 	grid-column-end: 3;
+ 	grid-row-start: 2;
+ 	grid-row-end: 3;
+	margin-top: -20%;
+}
+.date{
+	grid-column-start: 1;
+ 	grid-column-end: 4;
+	color: white;
+	text-align: center;
+	font-family: 'Space Mono';
+}
+
+.date p{
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 12px;
+	font-weight: bold;
+	letter-spacing: 3px;
+	padding-top: 10px;
+}
+
+@media screen and (min-width: 1920px){
+
+
+.grid-container{
+	margin-top: 3%;
+}
+
+
+ 	padding-top: 0px;
+}
+
+.intro h1 {
+	font-size: 16px;
+}
+
+.intro h2{
+	font-size: 15px;
+}
+
+
+
+.digitalclock img{
+	width: 800px;
+	height: 300px;
+}
+
+.digitalclock #digitalclock {
+    top: 28%;
+    letter-spacing: 17px;
+    font-size: 16px;
+}
+
+.middag, .avond, .nacht, .ochtend{
+	margin-top: -10%;
+	width: 185px;
+	height: 185px;
+}
+
+
+.date p{
+	font-size: 15px;
+	padding-top: 0;
+}
+
+
+
